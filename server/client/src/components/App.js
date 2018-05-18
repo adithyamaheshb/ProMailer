@@ -1,7 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import Header from './Header';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 
+import Header from './Header';
 const Dashboard = () => <h2>Dashboard</h2>
 const SurveyNew = () => <h2>SurveyNew</h2>
 const Landing = () => <h2>Landing</h2>
@@ -11,9 +13,13 @@ class App extends React.Component {
         super(props);
     }
 
+    componentDidMount() {
+        this.props.fetchUser();
+    }
+
     render() {
         return(
-            <div>
+            <div className="container">
                 <BrowserRouter>
                     <div>
                         <Header />
@@ -27,4 +33,4 @@ class App extends React.Component {
     }
 }
 
-export default App;
+export default connect(null, actions)(App);
