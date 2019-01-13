@@ -5,7 +5,7 @@ class Landing extends Component {
         return (
             <div style={{ textAlign: 'center' }}>
                 <h1>
-                    Maily!
+                    ProMailer!
                 </h1>
                 Collect feedbak from your users
             </div>
